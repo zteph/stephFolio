@@ -2,6 +2,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
+  <!-- Content Security Policy (basic safe setup) -->
+<meta http-equiv="Content-Security-Policy" content="
+default-src 'self';
+img-src 'self' data: https:;
+script-src 'self' 'unsafe-inline' https:;
+style-src 'self' 'unsafe-inline' https:;
+font-src 'self' https:;
+connect-src 'self' https:;
+">
+
+<!-- X-Content-Type-Options (NOT fully fixable via meta, but included for completeness) -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<!-- Referrer Policy -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<!-- Permissions Policy (limited support in meta, but helps a bit) -->
+<meta http-equiv="Permissions-Policy" content="
+geolocation=(),
+camera=(),
+microphone=(),
+fullscreen=(self)
+">
+
+<!-- Basic security hint -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Register</title>
 <link rel="stylesheet" href="style.css">
 <script src="controller.js" defer></script>
